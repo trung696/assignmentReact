@@ -1,25 +1,64 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { useState, useEffect } from "react";
+import { add, getAll, remove, edit } from "./api/productAPI";
+import Routes from "./Routes";
+import "./styles.css";
 
-function App() {
+export default function App() {
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const { data } = await getAll();
+        setProducts(data);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getProducts();
+  }, []);
+
+  const onHandleRemove = async (id) => {
+    try {
+      const { data } = await remove(id);
+      const newProducts = products.filter((item) => item.id !== id);
+      setProducts(newProducts);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onHandleAdd = async (item) => {
+    try {
+      const { data } = await add(item);
+      setProducts([...products, data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onHandleEdit = async (item) => {
+    try {
+      const { data } = await edit(item);
+      console.log("app.js", data);
+      const newProducts = products.map((product) =>
+        product.id == data.id ? data : product
+      );
+      setProducts(newProducts);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          alo <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes
+
+        data={products}
+        onRemove={onHandleRemove}
+        onAdd={onHandleAdd}
+        onEdit={onHandleEdit}
+      />
+    </>
   );
 }
-
-export default App;

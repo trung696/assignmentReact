@@ -1,0 +1,59 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Hamberger",
+      "image": "https://lh3.googleusercontent.com/proxy/bBMH-sHR53MzLsDDeBnYHga-UhbqtspQXqVIlEYrhJ8GG502CBrBU3zBjZ7g5Fc0kR4ycKCMxDKm6_xr5sMAd53s2_UaYAoWSc48hFWh_9BoH5FicFZhB0Gn8v12eN6NQLeDtTOYLHOmJLitAb2GI0tHjI3R2LX6tlvg"
+    },
+    {
+      "id": 2,
+      "name": "Chicken",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY7D3cyTvigzpCAVz2AHkI0OhFdO_Fk3IuaQ&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "name": "Pasta2",
+      "image": "https://static.tuoitre.vn/tto/i/s626/2014/10/27/7o2pqXbX.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": "50364231631211404",
+      "name": "Bánh 1",
+      "categoryId": "1",
+      "image": "https://yummyday.vn/uploads/images/banh-hamburger-10.jpg",
+      "price": "99.000",
+      "status": "true"
+    },
+    {
+      "id": "3240044562252506",
+      "name": "bánh 2",
+      "categoryId": "1",
+      "image": "https://yummyday.vn/uploads/images/banh-hamburger-10.jpg",
+      "price": "10.00",
+      "status": "false"
+    },
+    {
+      "id": "0202035136326263",
+      "name": "Chicken2",
+      "categoryId": "2",
+      "image": "https://www.allchickenrecipes.com/wp-content/uploads/2018/09/Crispy-Fried-Chicken-Recipe.jpg",
+      "price": "1999",
+      "status": "true"
+    }
+  ],
+  "users": [
+    {
+      "email": "trung@gmail.com",
+      "password": "$2a$10$0W9DY1mQNby7UPjwB4nWFuMTDgssLKIfrG3ZaK72z9Rz79ofPYVcO",
+      "username": "Admin",
+      "id": 1
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2a$10$BPJsqg6ZQZ5IXswyKIyMF.Dx3ykN5dnbIOINAnK5/mg82cmsDo9KG",
+      "username": "123",
+      "id": 2
+    }
+  ]
+}
